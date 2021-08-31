@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('mypage/profile/create', 'Mypage\ProfileController@add');
+Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit');
+
+Route::get('mypage/article/create', 'Mypage\ArticleController@add');
+Route::get('mypage/article/edit', 'Mypage\ArticleController@edit');
