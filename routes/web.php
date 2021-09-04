@@ -17,6 +17,7 @@ Route::get('mypage/profile/create', 'Mypage\ProfileController@add')->middleware(
 Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
 
 Route::get('mypage/article/create', 'Mypage\ArticleController@add')->middleware('auth');
+Route::post('mypage/article/create', 'Mypage\ArticleController@create')->middleware('auth'); 
 Route::get('mypage/article/edit', 'Mypage\ArticleController@edit')->middleware('auth');
 
 Route::get('/', 'ToppageController@index');
