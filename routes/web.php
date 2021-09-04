@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-Route::get('mypage/profile/create', 'Mypage\ProfileController@add');
-Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit');
+Route::get('mypage/profile/create', 'Mypage\ProfileController@add')->middleware('auth');
+Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
 
-Route::get('mypage/article/create', 'Mypage\ArticleController@add');
-Route::get('mypage/article/edit', 'Mypage\ArticleController@edit');
+Route::get('mypage/article/create', 'Mypage\ArticleController@add')->middleware('auth');
+Route::get('mypage/article/edit', 'Mypage\ArticleController@edit')->middleware('auth');
+
+Route::get('/', 'ToppageController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
