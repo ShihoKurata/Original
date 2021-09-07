@@ -11,8 +11,8 @@ class ArticleController extends Controller
     {
         return view('mypage.article.create');
     }
-
-    public function create()
+    
+    public function create(Request $request)
     {
         return redirect('mypage/article/create');
     }
