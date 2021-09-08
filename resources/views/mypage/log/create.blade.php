@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h1>新規投稿</h1>
-                <form action="{{ action('Mypage\ArticleController@create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Mypage\LogController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>

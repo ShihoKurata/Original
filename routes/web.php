@@ -18,11 +18,23 @@ Route::post('mypage/profile/create', 'Mypage\ProfileController@create')->middlew
 Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
 Route::post('mypage/profile/edit', 'Mypage\ProfileController@update')->middleware('auth');
 
-Route::get('mypage/article/create', 'Mypage\ArticleController@add')->middleware('auth');
-Route::post('mypage/article/create', 'Mypage\ArticleController@create')->middleware('auth'); 
-Route::get('mypage/article/edit', 'Mypage\ArticleController@edit')->middleware('auth');
+Route::get('mypage/log/create', 'Mypage\LogController@add')->middleware('auth');
+Route::post('mypage/log/create', 'Mypage\LogController@create')->middleware('auth'); 
+Route::get('mypage/log/edit', 'Mypage\LogController@edit')->middleware('auth');
+Route::get('mypage/log/index', 'Mypage\LogController@index')->middleware('auth'); 
+Route::get('mypage/log/show', 'Mypage\LogController@show')->middleware('auth');
+
+Route::get('mypage/favorite/index', 'Mypage\FavoriteController@index')->middleware('auth'); 
+Route::get('mypage/favorite/show', 'Mypage\FavoriteController@show')->middleware('auth');
+
+
+
 
 Route::get('/', 'ToppageController@index');
+Route::get('/show', 'ToppageController@show');
+
+Route::get('/welcome', 'WelcomeController@index');
+Route::get('/mypage', 'Mypage\MypageFrontController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -10,4 +10,11 @@ class ToppageController extends Controller
     {
         return view('toppage.index');
     }
+    
+    public function show()
+    {
+        return view('toppage.show');
+    }
+    
+    
 }
