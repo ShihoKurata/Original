@@ -34,7 +34,7 @@ Route::get('/', 'ToppageController@index');
 Route::get('/show', 'ToppageController@show');
 
 Route::get('/welcome', 'WelcomeController@index');
-Route::get('/mypage', 'Mypage\MypageFrontController@index');
+Route::get('/mypage', 'Mypage\FrontController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

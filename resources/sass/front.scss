@@ -9,15 +9,35 @@ body {
   }
 }
 
-.headline {
-  .caption {
-    position: relative;
-    width: 350px;
-    .image {
-      img {
-    width: 100%;
-      }
-    }
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+  
+// .top-wrapper {
+//   padding: 180px 0 100px 0;
+//   //background-image:"image/pflower-field-250016_640" class="blog-image">
+//   background-size: cover;
+//   color: white;
+//   text-align: center;
+// }
+.btn-wrapper {
+  margin: 20px 0;
+  background-color: #3284D9;
+}
+
+.btn-wrapper p {
+  margin: 10px 0;
+}
+
+.trip-image {
+  margin-bottom: 10px;
+  width: 120px;
+  height: 120px;
+  display: block;
+  float: left;
+}
     .title {
       width: 100%;
       position: absolute;

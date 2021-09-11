@@ -3,6 +3,30 @@ body {
   background-position: center;
   background-color: #000;
   color: #fff;
+  
+  .header-navigation {
+  width: 100%;
+  background-color: #D2EFFA;
+  padding: 20px 0;
+  }
+  
+  .header-navigation:after {
+  clear: both;
+  display: block;
+  content: " ";
+  }
+
+  .header-navigation li {
+  float: left;
+  padding: 0 30px;
+  text-align: center;
+  list-style-type: none;
+  }
+
+  .header-navigation li a {
+  color: #333;
+  text-decoration: none;
+  }
 }
 
 .navbar-laravel {
