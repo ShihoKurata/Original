@@ -1,65 +1,12 @@
-body {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #000;
-  color: #fff;
+.btn btn-primary {
+  margin: 100px 100px;
 }
 
-body .header-navigation {
-  width: 100%;
-  background-color: #D2EFFA;
-  padding: 20px 0;
+.table-primary {
+    padding: 100px;
 }
 
-body .header-navigation:after {
-  clear: both;
-  display: block;
-  content: " ";
-}
 
-body .header-navigation li {
-  float: left;
-  padding: 0 30px;
-  text-align: center;
-  list-style-type: none;
-}
 
-body .header-navigation li a {
-  color: #333;
-  text-decoration: none;
-}
 
-.navbar-laravel {
-  background-color: #000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-.navbar-brand {
-  color: #fff !important;
-}
-
-.nav-link {
-  color: #fff !important;
-}
-
-.table-dark {
-  color: #fff;
-}
-
-.list-group-item {
-  border-color: #fff;
-  background-color: #000;
-}
-
-.login-box {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.login-header {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.login-body {
-  background-color: rgba(0, 0, 0, 0.25);
-}
 
