@@ -25,7 +25,7 @@
                             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="#!">マイページ ＞<span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="#!">マイページ<span class="sr-only">(current)</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -76,10 +76,6 @@
                                     <tr>
                                         <th>性別</th>
                                         <th>gender</th>
-                                    </tr>
-                                    <tr>
-                                        <th>年齢</th>
-                                        <th>age</th>
                                     </tr>
                                 </tbody>
                             </table>
