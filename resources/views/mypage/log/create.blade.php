@@ -61,18 +61,28 @@
                             </ul>
                         @endif
                         <div class="form-group row">
+                            <label class="col-md-2">旅行先</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="place" value="{{ old('place') }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-2">旅行のテーマ</label>
+                            <div class="col-md-10">
+                                <select class="form-control" name="category" value="{{ old('category') }}">
+                                    <option>ひとり旅</option>
+                            　　　　<option>ふたり旅（夫婦・パートナーと一緒に）</option>
+                                    <option>家族旅（子供と一緒に）</option>
+                                    <option>グループ旅（友人と一緒に）</option>
+                                </select>
+                            </div>
+            　　　     　　</div>
+                        <div class="form-group row">
                             <label class="col-md-2">タイトル</label>
                             <div class="col-md-10">
                                 <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-md-2">カテゴリー（複数選択できるようにする）</label>
-                            <div class="col-md-10">
-                                <textarea class="form-control" name="caregory" rows="5">{{ old('category') }}</textarea>
-                            </div>
-                        </div>
-
                         <div class="form-group row">
                             <label class="col-md-2">本文</label>
                             <div class="col-md-10">

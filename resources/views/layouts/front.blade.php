@@ -76,7 +76,36 @@
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-
+            <div class="top-wrapper">
+            <div class="container">
+                <div class="header-title-area">
+                    <img class="logo" src="/image/tabilog-logo.phg" width="35px" height="50px" alt="">
+                    <h1 class="logo">TABI LOG</h1>
+                    <p class="text-sub"><サブタイトル＞</p>
+                    <div class="btn-wrapper">
+                        <button type="button" class="btn btn-primary"><a href="#" class="btn signup">新規登録</a></button>       
+                    </div>
+                </div>
+            </div>    
+            <div class="carousel slide" data-ride="carousel" data-interval="6000">
+                <div class="carousel-inner">
+                    <div class="opacity-50">
+                        <div class="carousel-item active">
+                             <img class="img-fluid" src="/image/flower-field-250016_640.jpg" width="1400px" height="700px" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="image/polynesia-3021072_640.jpg" width="100%" height="700px" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="image/grand-canyon-4273792_640.jpg" width="1400px" height="700px" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="image/wolf-647528_640.jpg" width="1400px" height="700px" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')

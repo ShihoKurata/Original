@@ -4,53 +4,66 @@
 
 @section('content')
 
-
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ asset('css/front.css') }}">
-    </head>
-    <body>
-        <header>
-            
-        </header>
-        
-        <div class = "top-wrapper">
             <div class="container">
-                <div class="header-title-area">
-                    <img class="logo" src="/image/tabilog-logo.phg" width="35px" height="50px" alt="">
-                    <h1 class="logo">TABI LOG</h1>
-                    <p class="text-sub"><サブタイトル＞</p>
-                    <div class="btn-wrapper">
-                        <button type="button" class="btn btn-primary"><a href="#" class="btn signup">新規登録</a></button>       
+                <hr color="#c0c0c0">
+                @if (!is_null($headline))
+                    <div class="row">
+                        <div class="headline col-md-10 mx-auto">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="caption mx-auto">
+                                        <div class="image">
+                                            @if ($headline->image_path)
+                                                <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+                                            @endif
+                                        </div>
+                                    <div class="title p-2">
+                                        <h1>{{ str_limit($headline->title, 70) }}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel slide" data-ride="carousel" data-interval="6000">
-                    <div class="carousel-inner">
-                         <div class="opacity-50">
-                            <div class="carousel-item active">
-                                 <img class="img-fluid" src="/image/flower-field-250016_640.jpg" width="1400px" height="700px" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="image/polynesia-3021072_640.jpg" width="100%" height="700px" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="image/grand-canyon-4273792_640.jpg" width="1400px" height="700px" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="image/wolf-647528_640.jpg" width="1400px" height="700px" alt="">
-                            </div>
+                @endif
+                <hr color="#c0c0c0">
+                    <div class="row">
+                        <div class="posts col-md-8 mx-auto mt-3">
+                            @foreach($posts as $post)
+                                <div class="post">
+                                    <div class="row">
+                                        <div class="text col-md-6">
+                                            <div class="date">
+                                                {{ $post->updated_at->format('Y年m月d日') }}
+                                            </div>
+                                            <div class="title">
+                                                {{ str_limit($post->title, 150) }}
+                                            </div>
+                                            <div class="body mt-3">
+                                                {{ str_limit($post->body, 1500) }}
+                                            </div>
+                                        </div>
+                                        <div class="image col-md-6 text-right mt-4">
+                                            @if ($post->image_path)
+                                                <img src="{{ asset('storage/image/' . $post->image_path) }}">
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr color="#c0c0c0">
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
+        @endsection
+
         <div class="main">
             <div class="container">
                 <div class="contents">
-                    <h3 class="section-title">おすすめスポット</h3>
+                    <h3 class="section-title">新着記事</h3>
                 </div>
                 <div class="card-contents">
                     <div class="card-body">
@@ -110,5 +123,5 @@
     </body>
 
    
-@endsection
+
 
