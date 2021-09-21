@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Log;
 use App\History;
 use Carbon\Carbon;
+use Storage; 
 
 class LogController extends Controller
 {
@@ -24,8 +25,8 @@ class LogController extends Controller
         
         // formに画像があれば、保存する
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $log->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $log->image_path = Storage::disk('s3')->url($path);
         } else {
             $log->image_path = null;
         }
@@ -77,10 +78,10 @@ class LogController extends Controller
         if ($request->remove == 'true') {
           $log_form['image_path'] = null;
         } elseif ($request->file('image')) {
-          $path = $request->file('image')->store('public/image');
-          $log_form['image_path'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+          $log_form['image_path'] = Storage::disk('s3')->url($path);
         } else {
-          $log_form['image_path'] = $log->image_path;
+          $log_form['image_path'] = Storage::disk('s3')->url($path);
         }
         
         unset($log_form['image']);
