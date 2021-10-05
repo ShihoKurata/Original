@@ -28,6 +28,9 @@
     </head>
     <body>
         <header>
+            <div class="header-image">
+                <!--<img src="image/mypage-header.png" alt="">-->
+            </div>
             <div class="logo">
                 <a href="#">
                     <img src="image/tabilog-logo.png" alt="">
@@ -65,9 +68,13 @@
                                 </form>
                             </div>
                         </li>
+                        <li><a href="#" class="btn-2">LOG作成</a></li>
                 @endguest     
                     
             </ul>
+            <!--<div class="header-image">-->
+            <!--    <img src="image/mypage-headder2.png" alt="">-->
+            <!--</div>-->
       　</header>
       　
 

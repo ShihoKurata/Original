@@ -25,7 +25,7 @@ Route::get('mypage/log/edit', 'Mypage\LogController@edit')->middleware('auth');
 Route::post('mypage/log/edit', 'Mypage\LogController@update')->middleware('auth');
 Route::get('mypage/log/delete', 'Mypage\LogController@delete')->middleware('auth');
 Route::get('mypage/log/index', 'Mypage\LogController@index')->middleware('auth'); 
-Route::get('mypage/log/show', 'Mypage\LogController@show')->middleware('auth');
+Route::get('mypage/log/show', 'Mypage\LogController@show')->name('log.show');
 
 Route::get('mypage/favorite/index', 'Mypage\FavoriteController@index')->middleware('auth'); 
 Route::get('mypage/favorite/show', 'Mypage\FavoriteController@show')->middleware('auth');

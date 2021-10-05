@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h1>新規投稿</h1>
+                <h1>LOG投稿</h1>
                 <form action="{{ action('Mypage\LogController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)

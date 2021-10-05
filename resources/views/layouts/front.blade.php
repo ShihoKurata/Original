@@ -28,7 +28,59 @@
     </head>
     
     <body>
-        <div class="top-image">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+                <div class="container">
+                    <div class="logo">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img src="image/tabilog-logo.png" alt="">
+                        </a>
+                    </div>
+        
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
+        
+                        </ul>
+                    <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!--Authentication Links -->
+                             {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
+                            @guest
+                                <!--<li><p>TABI LOGとは</p></li>-->
+                                
+                                <li><a class="nav-link" href="{{ route('login') }}">{{ __('login') }}<</a></li>
+                                <li><a href="#" class="btn-1">signup<</a></li>
+                    {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                    <div class ="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                {{ __('logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                                <li><a href="#" class="btn-2">LOG作成</a></li>
+                            @endguest
+                        </ul>             
+                    </div><!--collapse-->
+                </div><!--container-->
+            </nav>
+        </header>
+      　
+      　<div class="top-image">
             <div class="carousel slide" data-ride="carousel" data-interval="6000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -47,45 +99,6 @@
                 </div>
             </div>
         </div>
-    
-        <header>
-            <div class="logo">
-                <a href="#">
-                    <img src="image/tabilog-logo.png" alt="">
-                </a>
-            </div>
-      　     <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                @guest
-                    <li><a href="#" class="btn-1">signup</a></li>
-                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('login') }}<</a></li>
-           
-                {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
-                    @else
-                        <li><a href="#" class="btn-2">新規投稿</a></li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                       
-                            <div class ="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('logout') }}
-                                </a>
-                           
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                @endguest     
-                    
-            </ul>
-      　</header>
       　
 
 

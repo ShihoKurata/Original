@@ -7,10 +7,12 @@
 
 {{-- mypage.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
+
+<div class="main">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h1>編集</h1>
+                <h1>LOG編集</h1>
                 <form action="{{ action('Mypage\LogController@edit') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
