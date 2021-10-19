@@ -110,10 +110,9 @@ class LogController extends Controller
 
 
 
-     public function show(Request $request, $id, Log $log)
+     public function show(Request $request)
     {
-        $message = 'This is your log' . $id;
-        $log = Log::find($id);
-        return view('mypage.log.show', ['message' => $message, 'log' => $log]);
+        $log = Log::find($request->id);
+        return view('mypage.log.show', ['log' => $log]);
     }
 }

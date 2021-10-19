@@ -1,8 +1,64 @@
 body {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #000;
-  color: #fff;
+  color: #000;
+  
+  .header{
+  z-index: 20;
+  position: relative;
+  top: 0;
+  background-image: url(/image/mypage-header.png);
+  background-size: cover;
+  height: 200px;
+　width: 100%;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  }
+  .logo a img {
+  padding: 25px 25px;
+  width: 120px;
+  height: 150px;
+  position: absolute;
+  }
+
+ .Label {
+  float: right;
+  padding: 0 0 0 auto;
+  }
+  
+  .ul {
+　　overflow:hidden;
+　　list-style:none;
+　　margin: 0 50px;
+　　z-index: 20;
+　　position: absolute;
+  }
+　
+　.ul li {
+  display: inline-block;
+  margin: 10px 0 0 30px;
+  font-size: 20px;
+  }
+  
+  .btn-2 {
+  text-decoration: none;
+  background-color: #3284d9;
+  color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #00000029;
+  font-size: 16px;
+  padding: 15px 15px;
+  /*margin: 0 0 0 700px;*/
+  }
+  
+  .a {
+  color: #000;
+　text-transform: uppercase;
+  }
+
+  .h1 {
+  text-align: center;
+  margin-top: 25px;
+  }
   
   .header-navigation {
   width: 100%;
@@ -27,6 +83,10 @@ body {
   color: #333;
   text-decoration: none;
   }
+}
+
+.navbar navbar-expend-lg navbar-light bf-light {
+  background-color: #d2effa;
 }
 
 .navbar-laravel {
@@ -62,3 +122,9 @@ body {
 .login-body {
   background-color: rgba(0, 0, 0, 0.25);
 }
+
+.form-group row {
+  text-align: center;
+  margin-left: 300px;
+}
+

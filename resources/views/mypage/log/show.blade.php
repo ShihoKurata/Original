@@ -17,9 +17,8 @@
                     <div class="row">
                        
                         <tbody>
-                            <p>{{ $message }}</p>
-                            <p>{{ $log -> content }}</p>
-                            <p><a href={{ route('mypage.log.index) }}>一覧に戻る</p>
+                            <p>{{ $log->body }}</p>
+                            <p><a href={{ route('mypage.log.index') }}>一覧に戻る</p>
                         </tbody>
                         
                     </div>

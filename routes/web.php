@@ -19,7 +19,7 @@ Route::get('log/index', 'Mypage\LogController@index')->middleware('auth');
 Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit')->middleware('auth');
 Route::post('mypage/profile/edit', 'Mypage\ProfileController@update')->middleware('auth');
 
-Route::get('mypage/log/create', 'Mypage\LogController@add')->middleware('auth');
+Route::get('mypage/log/create', 'Mypage\LogController@add')->middleware('auth')->name('log.create');
 Route::post('mypage/log/create', 'Mypage\LogController@create')->middleware('auth'); 
 Route::get('mypage/log/edit', 'Mypage\LogController@edit')->middleware('auth');
 Route::post('mypage/log/edit', 'Mypage\LogController@update')->middleware('auth');
@@ -36,7 +36,7 @@ Route::get('mypage/favorite/show', 'Mypage\FavoriteController@show')->middleware
 Route::get('/', 'ToppageController@index');
 Route::get('/show', 'ToppageController@show');
 
-Route::get('/welcome', 'WelcomeController@index');
+Route::get('/welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/mypage', 'Mypage\FrontController@index');
 Auth::routes();
 
