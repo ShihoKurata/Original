@@ -42,7 +42,7 @@ body {
 }
 
 body .bgCarousel {
-  height: 500px;
+  height: 600px;
   width: 100vw;
 }
 
@@ -70,7 +70,7 @@ body .bgCarousel__item:nth-child(3) {
 }
 
 body .bgCarousel__item:nth-child(4) {
-  background-image: url(/image/wolf-647528_640.jpg);
+  background-image: url(/image/slide-4.png);
 }
 
 body .logo {
@@ -124,7 +124,8 @@ body .a {
 
 body .new-article {
   border: solid 1px #333333;
-  margin: 10px 60px;
+  border-radius: 10px;
+  margin: 15px 60px;
   height: 200px;
   width: 900px;
 }

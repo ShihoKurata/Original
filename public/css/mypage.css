@@ -17,11 +17,10 @@ body .header {
   align-items: center;
 }
 
-body .logo a img {
-  padding: 25px 25px;
+body .logo {
+  padding: 0;
   width: 120px;
   height: 150px;
-  position: absolute;
 }
 
 body .Label {
@@ -98,11 +97,11 @@ body .header-navigation li a {
 }
 
 .navbar-brand {
-  color: #fff !important;
+  color: #fff;
 }
 
 .nav-link {
-  color: #fff !important;
+  color: #fff;
 }
 
 .table-dark {

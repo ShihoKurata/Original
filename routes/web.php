@@ -34,7 +34,7 @@ Route::get('mypage/favorite/show', 'Mypage\FavoriteController@show')->middleware
 
 
 Route::get('/', 'ToppageController@index');
-Route::get('/show', 'ToppageController@show');
+Route::get('/show/{id}', 'ToppageController@show')->name('show');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/mypage', 'Mypage\FrontController@index');

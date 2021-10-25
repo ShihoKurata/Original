@@ -27,9 +27,10 @@ class ToppageController extends Controller
     }
   
     
-    public function show()
+    public function show($id)
     {
-        return view('toppage.show');
+        $log = Log::find($id);
+        return view('toppage.show',['log'=>$log]);
     }
     
     

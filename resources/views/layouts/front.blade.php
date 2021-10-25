@@ -51,8 +51,8 @@
     
       
         <nav class="navbar navbar-expand-md navbar-dark navbar-laravel fixed-top">
-          <div class="container">
-            <div class="logo">
+          <div class="container pl-0">
+            <div class="logo mt-2">
               <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ secure_asset('image/tabilog-logo.png') }}" alt="ロゴ画像">
               </a>
@@ -73,7 +73,7 @@
                {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                 @guest
                 <!--<li><p>TABI LOGとは</p></li>-->
-                  <div class="nav-item">
+                  <div class="nav-item" >
                      <div class="row">             
                       <li><a class="nav-link" href="{{ route('welcome') }}">{{ __('> TABI LOGとは') }}</a></li>
                     </div>
