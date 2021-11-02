@@ -28,9 +28,6 @@
                 <div class="date col-md-3">
                   {{ $post->updated_at->format('Y年m月d日') }}
                 </div>
-                {{--<div class="place col-md-3">
-                  {{ $post->place }}
-                </div>--}}
                 <div class="category col-md-6">
                   {{ $post->category }}
                 </div>

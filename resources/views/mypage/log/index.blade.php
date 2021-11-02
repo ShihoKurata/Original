@@ -10,9 +10,9 @@
                 <div class="col-md-12">
                     <form action="{{ action('Mypage\LogController@index') }}" method="get">
                         <div class="form-group row">
-                            <label class="search col-md-2 offset-md-2">★旅行先で検索する★</label>
+                            <label class="search col-md-2 offset-md-2">★旅行先やテーマで検索</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                                <input type="text" class="form-control" name="keyword" value="{{ $keyword }}">
                             </div>
                             <div class="col-md-2">
                                 {{ csrf_field() }}

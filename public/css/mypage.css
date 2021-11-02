@@ -4,28 +4,22 @@ body {
   color: #000;
 }
 
-body .header {
+body .header-image {
   z-index: 20;
-  position: relative;
-  top: 0;
+  position: fixed;
   background-image: url(/image/mypage-header.png);
   background-size: cover;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
   height: 200px;
   width: 100%;
-  opacity: 0.6;
-  display: flex;
-  align-items: center;
 }
 
-body .logo {
-  padding: 0;
-  width: 120px;
-  height: 150px;
-}
-
-body .Label {
-  float: right;
-  padding: 0 0 0 auto;
+body .logo img {
+  padding-top: 10px;
+  margin: 0;
+  width: 90px;
+  height: 120px;
 }
 
 body .ul {
@@ -54,7 +48,7 @@ body .btn-2 {
 }
 
 body .a {
-  color: #000;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -92,8 +86,13 @@ body .header-navigation li a {
 }
 
 .navbar-laravel {
-  background-color: #000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #000;
+  font-size: 18px;
+  padding-bottom: 20px;
 }
 
 .navbar-brand {
@@ -128,5 +127,9 @@ body .header-navigation li a {
 .form-group row {
   text-align: center;
   margin-left: 300px;
+}
+
+.main {
+  padding-top: 200px;
 }
 

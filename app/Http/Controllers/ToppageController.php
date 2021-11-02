@@ -11,27 +11,27 @@ use App\Log;
 
 class ToppageController extends Controller
 {
-    public function index(Request $request)
-    {
-        $posts = Log::all()->sortByDesc('updated_at');
+  public function index(Request $request)
+  {
+    $posts = Log::all()->sortByDesc('updated_at');
 
-        if (count($posts) > 0) {
-            $headline = $posts->shift();
-        } else {
-            $headline = null;
-        }
-
-        // log/index.blade.php ファイルを渡している
-        // また View テンプレートに headline、 posts、という変数を渡している
-        return view('toppage.index', ['headline' => $headline, 'posts' => $posts]);
+    if (count($posts) > 0) {
+      $headline = $posts->shift();
+    } else {
+      $headline = null;
     }
+
+    // log/index.blade.php ファイルを渡している
+    // View テンプレートに headline、 posts、という変数を渡している
+    return view('toppage.index', ['headline' => $headline, 'posts' => $posts]);
+  }
   
     
-    public function show($id)
-    {
-        $log = Log::find($id);
-        return view('toppage.show',['log'=>$log]);
-    }
+  public function show($id)
+  {
+    $log = Log::find($id);
+    return view('toppage.show',['log'=>$log]);
+  }
     
     
 }

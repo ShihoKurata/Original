@@ -87,6 +87,12 @@ body {
     color: #000;
   　text-transform: uppercase;
   }
+  
+  .navbar-dark .navbar-nav .nav-link {
+  color: #000;
+  font-size: 18px;
+  //padding-bottom: 20px;
+  }
 
   .new-article {
     border: solid 1px #333333;
@@ -102,7 +108,7 @@ body {
 /*}*/
 
   .logo img {
-    padding: 0;
+    padding-top: 10px;
     margin: 0;
     width: 90px;
     height: 120px;

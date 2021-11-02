@@ -37,7 +37,7 @@ Route::get('/', 'ToppageController@index');
 Route::get('/show/{id}', 'ToppageController@show')->name('show');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
-Route::get('/mypage', 'Mypage\FrontController@index');
+Route::get('/mypage', 'Mypage\FrontController@index')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

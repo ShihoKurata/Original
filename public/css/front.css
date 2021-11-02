@@ -122,6 +122,11 @@ body .a {
   text-transform: uppercase;
 }
 
+body .navbar-dark .navbar-nav .nav-link {
+  color: #000;
+  font-size: 18px;
+}
+
 body .new-article {
   border: solid 1px #333333;
   border-radius: 10px;
@@ -131,7 +136,7 @@ body .new-article {
 }
 
 body .logo img {
-  padding: 0;
+  padding-top: 10px;
   margin: 0;
   width: 90px;
   height: 120px;
