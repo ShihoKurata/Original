@@ -73,14 +73,15 @@
                 @guest
                 <!--<li><p>TABI LOGとは</p></li>-->
                   <div class="nav-item" >
-                     <div class="row">             
+                   {{--  <div class="row">             
                       <li><a class="nav-link" href="{{ route('welcome') }}">{{ __('> TABI LOGとは') }}</a></li>
+                    </div>  --}}
+                    <div class="row pt-1">             
+                    {{--  <li><a class="nav-link" href="{{ route('login') }}">{{ __('> ログイン') }}</a></li>--}}
+                      <li><a href="{{ route('login') }}" class="btn_06-2"><span>> ログイン</span></a></li>
                     </div>
-                    <div class="row">             
-                      <li><a class="nav-link" href="{{ route('login') }}">{{ __('> ログイン') }}</a></li>
-                    </div>
-                    <div class="row">
-                      <li><a class="btn-1" href="{{ route('register') }}">{{ __('新規登録') }}</a></li>
+                    <div class="row pt-2">
+                      <li><a href="{{ route('register') }}"class="btn_06-2"><span>新規登録</span></a></li>
                     </div>
                   </div>
                   {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
@@ -92,19 +93,19 @@
                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                           {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
+                        <div class ="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('ログアウト') }}
+                          </a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                          </form>
+                        </div>
                       </li>
-                      <div class ="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                          {{ __('ログアウト') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                         @csrf
-                        </form>
-                      </div>
                     </div>              
                     <div class="row">
-                      <li><a class="btn-2" href="{{ route('log.create') }}">{{ __('LOG作成') }}</a></li>
+                      <li><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
                     </div>
                   </div>
                 @endguest

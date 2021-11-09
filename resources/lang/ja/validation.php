@@ -149,7 +149,11 @@ return [
         'place' => '旅行先',
         'category' => '旅行のテーマ',
         'title' => 'タイトル',
-        'body' => '本文'
+        'body' => '本文',
+        'name' => '氏名',
+        'gender' => '性別',
+        'hobby' => '趣味',
+        'introduction' => '自己紹介'
         
         ],
 

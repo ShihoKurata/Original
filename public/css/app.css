@@ -1,5 +1,85 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+address,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+menu,
+nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+ul ul {
+  margin: 0;
+}
+
+table {
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
 img {
   width: 100%;
   height: 200px;
@@ -10944,6 +11024,68 @@ a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
+  }
+}
+
+.btn_06-3 {
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  max-width: 360px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.btn_06-3 span {
+  position: relative;
+  display: block;
+  transform: translate(-3px, -3px);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.btn_06-3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: #3284d9;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transform: translate(-3px, -3px);
+  transition: 0.3s;
+}
+
+.btn_06-3:hover span {
+  transform: translate(0, 0);
+}
+
+.btn_06-3:hover:after {
+  transform: translate(0, 0);
+}
+
+@media all and (max-width: 1023px) {
+  .btn_06-3 {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .btn_06-3 {
+    font-size: 16px;
   }
 }
 

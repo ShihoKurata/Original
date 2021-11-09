@@ -67,7 +67,7 @@
                 </li>  
               </div>              
               <div class="row">
-                <li><a class="btn-2" href="{{ route('log.create') }}">{{ __('LOG作成') }}</a></li>
+                <li><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
               </div>
             </div>
           </ul>             

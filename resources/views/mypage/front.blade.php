@@ -3,58 +3,75 @@
 @section('title', 'MYPAGE')
 
 @section('content')
-    
-  <div class="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <div class="card-contents">
-            <button type="button" class="btn btn-primary">投稿する</button>       
-            <table class="table">
-              <thead>
-                <tr class="table-primary">
-                  <th>プロフィール詳細</th>
-                  <th>＞</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th><a href="#">投稿リスト</a></th>
-                  <td>＞</td>
-                </tr>
-                <tr>
-                  <th><a href="#">お気に入りリスト</a></th>
-                  <td>＞</td>
-                </tr>
-              </tbody>
-            </table>
-          </div> 
-        </div>
-        <div class="col-9">
-          <div class="card-contents">
-            <div class="profile-contents">
-              <img src="image/polynesia-3021072_640" class="trip-image">
-              <table class="table table-sm">
-                <thead>
-                  <tr>
-                    <th>ユーザー名</th>
-                    <th>Name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>性別</th>
-                    <th>gender</th>
-                  </tr>
-                </tbody>
-              </table>
-              <button type="button" class="btn btn-primary">プロフィールを編集する</button>   
-            </div> 
-          </div> 
-        </div> 
+
+  <div class="wrapper">
+    <section class="side">
+      <h2>MENU</h2>　
+      <div class="row mb-3 ml-3">
+        <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
       </div>
-    </div>
+      <div class="row mb-3 ml-3">
+        <li class="menu"><a href="{{ route('profile.edit') }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+      </div>
+      <div class="row mb-3 ml-3">
+        <li class="menu"><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
+      </div>
+      <div class="row ml-3">
+        <li class="menu"><a href="{{ route('log.index') }}"class="btn_06-2"><span>LOGリスト</span></a></li>
+      </div>
+    </section>
+    <section class="main">
+      <h1>LOGを投稿</h1>
+      <div class="archive">
+        <form action="{{ action('Mypage\LogController@create') }}" method="post" enctype="multipart/form-data">
+          @if (count($errors) > 0)
+            <ul>
+              @foreach($errors->all() as $e)
+                <li>{{ $e }}</li>
+              @endforeach
+            </ul>
+          @endif
+          <div class="form-group row">
+            <label class="col-md-2">旅行先</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="place" value="{{ old('place') }}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2">テーマ</label>
+            <div class="col-md-10">
+              <select class="form-control" name="category" value="{{ old('category') }}">
+                <option>旅のテーマを選択</option>
+                <option>ひとり旅</option>
+          　　　　<option>ふたり旅（夫婦・パートナーと一緒に）</option>
+                <option>家族旅（子供と一緒に）</option>
+                <option>グループ旅（友人と一緒に）</option>
+              </select>
+            </div>
+  　　　    </div>
+          <div class="form-group row">
+            <label class="col-md-2">タイトル</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2">本文</label>
+            <div class="col-md-10">
+              <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2">画像</label>
+            <div class="col-md-10">
+              <input type="file" class="form-control-file" name="image">
+            </div>
+          </div>
+            {{ csrf_field() }}
+          <input type="submit" class="btn btn-primary" value="更新">
+        </form>
+      </div>  
+    </section>
   </div>
-    
 @endsection
 
