@@ -8,10 +8,11 @@
     <section class="side">
       <h2>MENU</h2>　
       <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
-      </div>
-      <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.edit') }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @if(Auth::user()->profile==null)
+          <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
+        @else
+          <li class="menu"><a href="{{ route('profile.edit', ['id' => Auth::user()->profile->id]) }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @endif      
       </div>
       <div class="row mb-3 ml-3">
         <li class="menu"><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
@@ -21,7 +22,7 @@
       </div>
     </section>
     <section class="main">
-      <h1>LOGを投稿</h1>
+      <h1 class="ml-3 mb-3">LOGを投稿</h1>
       <div class="archive">
         <form action="{{ action('Mypage\LogController@create') }}" method="post" enctype="multipart/form-data">
           @if (count($errors) > 0)
@@ -68,7 +69,9 @@
             </div>
           </div>
             {{ csrf_field() }}
-          <input type="submit" class="btn btn-primary" value="更新">
+          <div style="text-align: center;">
+            <input type="submit" class="btn btn-primary" value="投稿する">
+          </div>
         </form>
       </div>  
     </section>

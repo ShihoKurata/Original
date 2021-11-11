@@ -6,10 +6,11 @@
     <section class="side">
       <h2>MENU</h2>　
       <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
-      </div>
-      <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.edit') }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @if(Auth::user()->profile==null)
+          <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
+        @else
+          <li class="menu"><a href="{{ route('profile.edit', ['id' => Auth::user()->profile->id]) }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @endif      
       </div>
       <div class="row mb-3 ml-3">
         <li class="menu"><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
@@ -22,7 +23,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <h1>プロフィール作成</h1>
+            <h1 class="ml-3 mb-3">プロフィール作成</h1>
             <div class="archive">
               <form action="{{ action('Mypage\ProfileController@create') }}" method="post" enctype="multipart/form-data">
                 @if (count($errors) > 0)
@@ -65,7 +66,7 @@
                 </div>
                 {{ csrf_field() }}
                 <div style="text-align: center;">
-                  <input type="submit" class="btn-lg btn-primary" value="更新する">
+                  <input type="submit" class="btn-lg btn-primary" value="登録">
                 </div>
               </form>
             </div>

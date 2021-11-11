@@ -5,10 +5,11 @@
     <section class="side">
       <h2>MENU</h2>　
       <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
-      </div>
-      <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.edit') }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @if(Auth::user()->profile==null)
+          <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
+        @else
+          <li class="menu"><a href="{{ route('profile.edit') }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @endif      
       </div>
       <div class="row mb-3 ml-3">
         <li class="menu"><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
@@ -20,7 +21,7 @@
     <section class="main">
       <div class="container">
         <div class="row">
-          <h1>LOGリスト</h1>
+          <h1 class="ml-3 mb-3">LOGリスト</h1>
         </div>
         <div class="archive">
           <div class="row">

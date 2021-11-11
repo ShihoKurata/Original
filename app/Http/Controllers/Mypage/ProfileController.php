@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Profile;
 use App\ProfileHistory;
 use Carbon\Carbon;
+use Auth;
 
 
 class ProfileController extends Controller
@@ -33,6 +34,7 @@ class ProfileController extends Controller
     unset($form['image']);
       // データベースに保存する
     $profile->fill($form);
+    $profile->user_id = Auth::id();
     $profile->save();
 
     return redirect('mypage/profile/create');
@@ -77,7 +79,7 @@ class ProfileController extends Controller
         $profile_history->edited_at = Carbon::now();
         $profile_history->save();
         
-        return redirect('admin/profile/');
+        return redirect('/mypage');
   }
          
   public function delete(Request $request)
@@ -86,6 +88,6 @@ class ProfileController extends Controller
     $profile = Profile::find($request->id);
     // 削除する
     $profile->delete();
-    return redirect('mypage');
+    return redirect('/mypage');
   }  
 }

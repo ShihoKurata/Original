@@ -8,10 +8,11 @@
     <section class="side">
       <h2>MENU</h2>　
       <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
-      </div>
-      <div class="row mb-3 ml-3">
-        <li class="menu"><a href="{{ route('profile.edit') }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @if(Auth::user()->profile==null)
+          <li class="menu"><a href="{{ route('profile.create') }}"class="btn_06-2"><span>プロフィール作成</span></a></li>
+        @else
+          <li class="menu"><a href="{{ route('profile.edit', ['id' => Auth::user()->profile->id]) }}"class="btn_06-2"><span>プロフィール編集</span></a></li>
+        @endif      
       </div>
       <div class="row mb-3 ml-3">
         <li class="menu"><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
@@ -24,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <h2>プロフィール編集</h2>
+            <h1 class="ml-3 mb-3">プロフィール編集</h1>
             <div class="archive">
               <form action="{{ action('Mypage\ProfileController@update') }}" method="post" enctype="multipart/form-data">
                 @if (count($errors) > 0)
@@ -45,7 +46,7 @@
                   <div class="col-md-10">
                     <input type="file" class="form-contol-file" name="image">
                     <div class="form-text text-info">
-                      設定中: {{ $news_form->image_path }}
+                      設定中: {{ $profile_form->image_path }}
                     </div>
                     <div class="form-check">
                       <label class="form-check-label">
@@ -77,7 +78,9 @@
                   <div class="col-md-10">
                     <input type="hidden" name="id" value="{{ $profile_form->id }}">
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新する">
+                    <div style="text-align: center;">
+                      <input type="submit" class="btn btn-primary" value="更新する">
+                    </div>
                   </div>
                 </div>
                 {{ csrf_field() }}
