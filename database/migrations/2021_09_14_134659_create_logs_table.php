@@ -18,7 +18,7 @@ class CreateLogsTable extends Migration
             $table->string('place');
             $table->string('category');
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->string('image_path')->nullable();
             
             $table->timestamps();

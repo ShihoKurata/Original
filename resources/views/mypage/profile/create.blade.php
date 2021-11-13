@@ -22,7 +22,7 @@
     <section class="main">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 mx-auto">
+          <div class="col-md-12 mx-auto">
             <h1 class="ml-3 mb-3">プロフィール作成</h1>
             <div class="archive">
               <form action="{{ action('Mypage\ProfileController@create') }}" method="post" enctype="multipart/form-data">

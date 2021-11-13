@@ -19,101 +19,71 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    {{--<!-- Styles -->
-    {{-- Laravel標準で用意されているCSSを読み込みます --}}
+    {{--<!-- Styles --}}
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    {{-- この章の後半で作成するCSSを読み込みます --}}
     <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
   </head>
   
   <body>
     <header>
-      
-      <!--<div class="top-image">-->
-      <!--  <div class="carousel slide" data-ride="carousel" data-interval="6000">-->
-      <!--    <div class="carousel-inner">-->
-      <!--      <div class="carousel-item active">-->
-      <!--        <img class="img-fluid" src="/image/flower-field-250016_640.jpg" alt="" width="1024" height="768">-->
-      <!--      </div>-->
-      <!--      <div class="carousel-item">-->
-      <!--        <img class="img-fluid" src="image/polynesia-3021072_640.jpg" alt="" width="1024" height="768">-->
-      <!--      </div>-->
-      <!--      <div class="carousel-item">-->
-      <!--        <img class="img-fluid" src="image/grand-canyon-4273792_640.jpg" alt="" width="1024" height="768">-->
-      <!--      </div>-->
-      <!--      <div class="carousel-item">-->
-      <!--        <img class="img-fluid" src="image/wolf-647528_640.jpg" alt="" width="1024" height="768">-->
-      <!--      </div>-->
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</div>-->
+      <nav class="navbar navbar-expand-md navbar-dark navbar-laravel fixed-top">
+        <div class="container pl-0">
+          <div class="logo mt-2">
+            <a class="navbar-brand" href="{{ url('/') }}">
+              <img src="{{ secure_asset('image/tabilog-logo.png') }}" alt="ロゴ画像">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
     
-      
-        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel fixed-top">
-          <div class="container pl-0">
-            <div class="logo mt-2">
-              <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ secure_asset('image/tabilog-logo.png') }}" alt="ロゴ画像">
-              </a>
-            </div>
-      
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- Left Side Of Navbar -->
-              <ul class="navbar-nav mr-auto">
-      
-              </ul>
-              <!-- Right Side Of Navbar -->
-              <ul class="navbar-nav ml-auto">
-              <!--Authentication Links -->
-               {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                @guest
-                <!--<li><p>TABI LOGとは</p></li>-->
-                  <div class="nav-item" >
-                   {{--  <div class="row">             
-                      <li><a class="nav-link" href="{{ route('welcome') }}">{{ __('> TABI LOGとは') }}</a></li>
-                    </div>  --}}
-                    <div class="row pt-1">             
-                    {{--  <li><a class="nav-link" href="{{ route('login') }}">{{ __('> ログイン') }}</a></li>--}}
-                      <li><a href="{{ route('login') }}" class="btn_06-2"><span>> ログイン</span></a></li>
-                    </div>
-                    <div class="row pt-2">
-                      <li><a href="{{ route('register') }}"class="btn_06-2"><span>新規登録</span></a></li>
-                    </div>
+            </ul>
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+            <!--Authentication Links -->
+             {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
+              @guest
+                <div class="nav-item" >
+                  <div class="row pt-1">             
+                    <li><a href="{{ route('login') }}" class="btn_06-2"><span>> ログイン</span></a></li>
                   </div>
-                  {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
-                @else
-                  <div class="nav-item">
-                    <div class="row">
-                      <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                          {{ Auth::user()->name }} <span class="caret"></span>
+                  <div class="row pt-2">
+                    <li><a href="{{ route('register') }}"class="btn_06-2"><span>新規登録</span></a></li>
+                  </div>
+                </div>
+                {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+              @else
+                <div class="nav-item">
+                  <div class="row">
+                    <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
+                      <div class ="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                          {{ __('ログアウト') }}
                         </a>
-                        <div class ="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('ログアウト') }}
-                          </a>
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                          </form>
-                        </div>
-                      </li>
-                    </div>              
-                    <div class="row">
-                      <li><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
-                    </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                        </form>
+                      </div>
+                    </li>
+                  </div>              
+                  <div class="row">
+                    <li><a href="{{ route('mypage') }}"class="btn_06-2"><span>LOG作成</span></a></li>
                   </div>
-                @endguest
-              </ul>             
-            </div><!--collapse-->
-          </div><!--container-->
-        </nav>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                </div>
+              @endguest
+            </ul>             
+          </div><!--collapse-->
+        </div><!--container-->
+      </nav>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner bgCarousel">
   	      <div class="carousel-item bgCarousel__item active"></div>
   	      <div class="carousel-item bgCarousel__item"></div>
@@ -129,111 +99,3 @@
     </main>
   </body>
 </html>
-      
-      
-      {{--  <div class="top-image">
-            <div class="carousel slide" data-ride="carousel" data-interval="6000">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="img-fluid" src="/image/flower-field-250016_640.jpg" alt="" width="1024" height="768">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="img-fluid" src="image/polynesia-3021072_640.jpg" alt="" width="1024" height="768">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="img-fluid" src="image/grand-canyon-4273792_640.jpg" alt="" width="1024" height="768">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="img-fluid" src="image/wolf-647528_640.jpg" alt="" width="1024" height="768">
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-      --}}
-  
-    {{--<!--<body>-->
-    <!--    <div id="app">-->
-    <!--        {{-- 画面上部に表示するナビゲーションバーです。 - -}}-->
-    <!--        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">-->
-    <!--            <div class="container">-->
-    <!--                <a class="navbar-brand" href="{{ url('/') }}">-->
-    <!--                    {{ config('app.name', 'Laravel') }}-->
-    <!--                </a>-->
-    <!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-    <!--                    <span class="navbar-toggler-icon"></span>-->
-    <!--                </button>-->
-
-    <!--                <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-                        <!-- Left Side Of Navbar -->
-    <!--                    <ul class="navbar-nav mr-auto">-->
-
-    <!--                    </ul>-->
-
-                        <!-- Right Side Of Navbar -->
-    <!--                    <ul class="navbar-nav ml-auto">-->
-                        <!-- Authentication Links -->
-    <!--                    {{-- ログインしていなかったらログイン画面へのリンクを表示 - -}}-->
-    <!--                    @guest-->
-    <!--                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('login') }}<</a></li>-->
-    <!--                    {{-- ログインしていたらユーザー名とログアウトボタンを表示 - -}}-->
-    <!--                    @else-->
-    <!--                       <li class="nav-item dropdown">-->
-    <!--                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"-->
-    <!--                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>-->
-    <!--                            {{ Auth::user()->name }} <span class="caret"></span>-->
-    <!--                           </a>-->
-                               
-    <!--                           <div class ="dropdown-menu" aria-labelledby="navbarDropdown">-->
-    <!--                               <a class="dropdown-item" href="{{ route('logout') }}"-->
-    <!--                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">-->
-    <!--                                   {{ __('logout') }}-->
-    <!--                               </a>-->
-                                   
-    <!--                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">-->
-    <!--                                   @csrf-->
-    <!--                               </form>-->
-    <!--                           </div>-->
-    <!--                       </li>-->
-    <!--                        @endguest     -->
-                            
-    <!--                    </ul>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </nav>-->
-    <!--        {{-- ここまでナビゲーションバー -- }}-->
-            <!--<div class="top-wrapper">-->
-            <!--<div class="container">-->
-            <!--    <div class="header-title-area">-->
-            <!--        <img class="logo" src="/image/tabilog-logo.phg" width="35px" height="50px" alt="">-->
-            <!--        <h1 class="logo">TABI LOG</h1>-->
-            <!--        <p class="text-sub"><サブタイトル＞</p>-->
-            <!--        <div class="btn-wrapper">-->
-            <!--            <button type="button" class="btn btn-primary"><a href="#" class="btn signup">新規登録</a></button>       -->
-            <!--        </div>-->
-            <!--    </div>-->
-            <!--</div>    -->
-    <!--        <div class="carousel slide" data-ride="carousel" data-interval="6000">-->
-    <!--            <div class="carousel-inner">-->
-    <!--                <div class="opacity-50">-->
-    <!--                    <div class="carousel-item active">-->
-    <!--                         <img class="img-fluid" src="/image/flower-field-250016_640.jpg" width="1400px" height="700px" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="carousel-item">-->
-    <!--                        <img class="img-fluid" src="image/polynesia-3021072_640.jpg" width="100%" height="700px" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="carousel-item">-->
-    <!--                        <img class="img-fluid" src="image/grand-canyon-4273792_640.jpg" width="1400px" height="700px" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="carousel-item">-->
-    <!--                        <img class="img-fluid" src="image/wolf-647528_640.jpg" width="1400px" height="700px" alt="">-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    
-            <!--<main class="py-4">-->
-            <!--    {{-- コンテンツをここに入れるため、@yieldで空けておきます。 - -}}-->
-            <!--    @yield('content')-->
-            <!--</main>--> --}}
-   

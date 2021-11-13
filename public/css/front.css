@@ -131,10 +131,6 @@ body .btn_06-2:hover:after {
   }
 }
 
-body .container {
-  margin: 0 auto;
-}
-
 body .article-show {
   display: inline-block;
   box-shadow: 1px 1px 3px;
@@ -143,9 +139,12 @@ body .article-show {
   width: 900px;
 }
 
-body .a {
-  color: #000;
-  text-transform: uppercase;
+body .main-body {
+  margin: 20px 50px;
+}
+
+body .show {
+  line-height: 2;
 }
 
 body .navbar-dark .navbar-nav .nav-link {

@@ -28,17 +28,12 @@ body {
     }
   }
   
-//   section {
-//   max-width: 300px;
-//   margin: 0 auto;
-// }
  .btn_06-2 {
   max-width: 300px;
   margin: 0 auto;
   display: block;
   color: #ffffff;
   font-size: 15px;
-  //font-weight: bold;
   line-height: 1.2;
   text-decoration: none;
   text-align: center;
@@ -89,9 +84,6 @@ body {
     }
   }
   
-  .container{
-    margin: 0 auto;
-  }
   .article-show {
     display: inline-block;
     box-shadow: 1px 1px 3px;
@@ -99,25 +91,11 @@ body {
     margin: 30px auto;
     width: 900px;
   }  
- 
-  // .ul {
-  //   overflow:hidden;
-  //   list-style:none;
-  //   margin: 0 50px;
-  //   z-index: 20;
-  // }
-
-  // .ul li a {
-  //   display: list-item;
-  //   list-style-type: none;
-  //   margin: 10px 0 0 10px;
-  //   font-size: 16px;
-  //   float:right;
-  // }
- 
-  .a {
-    color: #000;
-  　text-transform: uppercase;
+  .main-body {
+    margin: 20px 50px;
+  }
+  .show {
+    line-height: 2.0;
   }
   
   .navbar-dark .navbar-nav .nav-link {

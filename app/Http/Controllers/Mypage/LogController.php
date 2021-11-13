@@ -13,7 +13,7 @@ class LogController extends Controller
 {
   public function add()
   {
-    return view('mypage.log.create');
+    return view('mypage.front');
   }
     
   public function create(Request $request)
@@ -39,7 +39,7 @@ class LogController extends Controller
       $log->fill($form);
       $log->save();
       
-      return redirect('mypage');
+      return redirect('mypage.front');
   }
 
   public function index(Request $request)
@@ -60,31 +60,6 @@ class LogController extends Controller
     return view('mypage.log.index', ['posts' => $posts, 'keyword' => $keyword]);
   }
   
-  // #ページネーション
-  //   $data = $query->orderBy('created_at','desc')->paginate(10);
-  //   return view('crud.index')->with('data',$data)
-  //   ->with('keyword',$keyword)
-  //   ->with('message','ユーザーリスト');
-  
-
-    // public function index(Request $request)
-    // {
-    //   $cond_title = $request->cond_title;
-    //   if ($cond_title != '') {
-    //       // 検索されたら検索結果を取得する
-    //       $posts = Log::where('title',like, '%'.$cond_title.'%')->get();
-    //   } else {
-    //       // それ以外はすべてのニュースを取得する
-    //       $posts = Log::all();
-    //   }
-    //   return view('mypage.log.index', ['posts' => $posts, 'cond_title' => $cond_title]);
-    // }
-
-        
-
-
-
-
     public function edit(Request $request)
     {
           // Log Modelからデータを取得する
@@ -125,12 +100,12 @@ class LogController extends Controller
         $history->save();
         
         
-        return redirect('mypage');
+        return redirect('mypage.front');
     }
     
     public function delete(Request $request)
   {
-      // 該当するNews Modelを取得
+      // 該当するLog Modelを取得
       $log = Log::find($request->id);
       // 削除する
       $log->delete();

@@ -22,8 +22,8 @@
     <section class="main">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 mx-auto">
-            <h1 class="ml-3 mb-3">LOG編集</h1>
+          <div class="col-md-12 mx-auto">
+            <h1 class="mx-auto mb-3">LOG編集</h1>
             <div class="archive">
               <form action="{{ action('Mypage\LogController@edit') }}" method="post" enctype="multipart/form-data">
                 @if (count($errors) > 0)
@@ -34,14 +34,14 @@
                   </ul>
                 @endif
                 <div class="form-group row">
-                  <label class="col-md-2">旅行先</label>
-                  <div class="col-md-10">
+                  <label class="col-md-3">旅行先</label>
+                  <div class="col-md-9">
                     <input type="text" class="form-control" name="place" value="{{ $log_form->place }}">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-md-2">旅行のテーマ</label>
-                  <div class="col-md-10">
+                  <label class="col-md-3">旅行のテーマ</label>
+                  <div class="col-md-9">
                     <select class="form-control" name="category" value="{{ $log_form->category }}">
                       <option>ひとり旅</option>
                 　　　　<option>ふたり旅（夫婦・パートナーと一緒に）</option>
@@ -51,13 +51,14 @@
                   </div>
     　　　     　　</div>
                 <div class="form-group row">
-                  <label class="col-md-2">タイトル</label>
-                <div class="col-md-10">
-                  <input type="text" class="form-control" name="title" value="{{ $log_form->title }}">
+                  <label class="col-md-3">タイトル</label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" name="title" value="{{ $log_form->title }}">
+                  </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-md-2">本文</label>
-                  <div class="col-md-10">
+                  <label class="col-md-3">本文</label>
+                  <div class="col-md-9">
                     <textarea class="form-control" name="body" rows="20">{{ $log_form->body }}</textarea>
                   </div>
                 </div>
@@ -76,7 +77,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-md-10">
+                  <div class="col-md-2 mx-auto">
                     <input type="hidden" name="id" value="{{ $log_form->id }}">
                       {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
@@ -85,8 +86,8 @@
               </form>
             </div>
             <div class="row mt-5">
-              <div class="col-md-4 mx-auto">
-                <h2>編集履歴</h2>
+              <div class="col-md-3 mx-auto">
+                <h3>編集履歴</h3>
                 <ul class="list-group">
                   @if ($log_form->histories != NULL)
                     @foreach ($log_form->histories as $history)
