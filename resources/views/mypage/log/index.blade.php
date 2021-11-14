@@ -1,6 +1,9 @@
 @extends('layouts.mypage')
+
 @section('title', '登録済みニュースの一覧')
+
 @section('content')
+
   <div class="wrapper">
     <section class="side">
       <h2>MENU</h2>　

@@ -1,5 +1,7 @@
 @extends('layouts.mypage')
+
 @section('title', 'プロフィール作成')
+
 @section('content')
 
   <div class="wrapper">

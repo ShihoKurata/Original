@@ -11,35 +11,29 @@
 |
 */
 
-
-
-Route::get('mypage/profile/create', 'Mypage\ProfileController@add')->middleware('auth');
-Route::post('mypage/profile/create', 'Mypage\ProfileController@create')->middleware('auth')->name('profile.create'); 
-//Route::get('log/index', 'Mypage\LogController@index')->middleware('auth'); 
-Route::get('mypage/profile/edit', 'Mypage\ProfileController@edit')->middleware('auth')->name('profile.edit'); 
-Route::post('mypage/profile/edit', 'Mypage\ProfileController@update')->middleware('auth');
-Route::get('mypage/profile/delete', 'Mypage\ProfileController@delete')->middleware('auth');
-Route::get('mypage/profile/index', 'Mypage\ProfileController@index')->middleware('auth');
-
-Route::get('mypage/log/create', 'Mypage\LogController@add')->middleware('auth')->name('log.create');
-Route::post('mypage/log/create', 'Mypage\LogController@create')->middleware('auth'); 
-Route::get('mypage/log/edit', 'Mypage\LogController@edit')->middleware('auth');
-Route::post('mypage/log/edit', 'Mypage\LogController@update')->middleware('auth');
-Route::get('mypage/log/delete', 'Mypage\LogController@delete')->middleware('auth');
-Route::get('mypage/log/index', 'Mypage\LogController@index')->middleware('auth')->name('log.index'); 
-Route::get('mypage/log/show', 'Mypage\LogController@show')->name('log.show');
-
-Route::get('mypage/favorite/index', 'Mypage\FavoriteController@index')->middleware('auth'); 
-Route::get('mypage/favorite/show', 'Mypage\FavoriteController@show')->middleware('auth');
-
-
-
+Route::group(['prefix' => 'mypage','middleware'=>'auth'], function() {
+  Route::get('profile/create', 'Mypage\ProfileController@add');
+  Route::post('profile/create', 'Mypage\ProfileController@create')->name('profile.create'); 
+  //Route::get('log/index', 'Mypage\LogController@index')->middleware('auth'); 
+  Route::get('profile/edit', 'Mypage\ProfileController@edit')->name('profile.edit'); 
+  Route::post('profile/edit', 'Mypage\ProfileController@update');
+  Route::get('profile/delete', 'Mypage\ProfileController@delete');
+  Route::get('profile/index', 'Mypage\ProfileController@index');
+  Route::get('log/create', 'Mypage\LogController@add')->name('log.create');
+  Route::post('log/create', 'Mypage\LogController@create'); 
+  Route::get('log/edit', 'Mypage\LogController@edit');
+  Route::post('log/edit', 'Mypage\LogController@update');
+  Route::get('log/delete', 'Mypage\LogController@delete');
+  Route::get('log/index', 'Mypage\LogController@index')->name('log.index'); 
+  Route::get('log/show', 'Mypage\LogController@show')->name('log.show');
+  Route::get('favorite/index', 'Mypage\FavoriteController@index'); 
+  Route::get('favorite/show', 'Mypage\FavoriteController@show');
+  
+});
 
 Route::get('/', 'ToppageController@index');
 Route::get('/show/{id}', 'ToppageController@show')->name('show');
-
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/mypage', 'Mypage\FrontController@index')->middleware('auth')->name('mypage');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

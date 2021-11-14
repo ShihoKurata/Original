@@ -1,6 +1,9 @@
 @extends('layouts.mypage')
+
 @section('title', '登録済みニュースの詳細画面')
+
 @section('content')
+
     <div class="main">
         <div class="container">
             <div class="row">

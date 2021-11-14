@@ -1,5 +1,7 @@
 @extends('layouts.mypage')
-@section('title', '編集')
+
+@section('title', 'LOG編集')
+
 @section('content')
 
   <div class="wrapper">

@@ -39,7 +39,7 @@ class LogController extends Controller
       $log->fill($form);
       $log->save();
       
-      return redirect('mypage.front');
+      return redirect('mypage');
   }
 
   public function index(Request $request)
@@ -85,7 +85,7 @@ class LogController extends Controller
           $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
           $log_form['image_path'] = Storage::disk('s3')->url($path);
         } else {
-          $log_form['image_path'] = Storage::disk('s3')->url($path);
+          $log_form['image_path'] = $log->image_path;
         }
         
         unset($log_form['image']);
@@ -100,7 +100,7 @@ class LogController extends Controller
         $history->save();
         
         
-        return redirect('mypage.front');
+        return redirect('mypage');
     }
     
     public function delete(Request $request)

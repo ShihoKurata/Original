@@ -1,6 +1,9 @@
 @extends('layouts.mypage')
+
 @section('title', '登録濟みプロフィールの一覧')
+
 @section('content')
+
   <div class="container">
     <div class="wrapper">
       <div class="row">

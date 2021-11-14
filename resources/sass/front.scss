@@ -119,58 +119,38 @@ body {
     height: 120px;
   }
 
-  .top-image {
-    padding: 0;
-    size: cover;
-    }
+  // .navbar {
+  // margin-bottom: -60px;
+  // }
 
+// .header-navigation {
+//   width: 100%;
+//   background-color: #d2effa;
+//   padding: 20px 0;
+//   position: absolute;
+// }
 
-/*メイン画像*/
-  .img-fluid {
-    margin: 0;
-    padding: 0;
-    // height: 100vh;
-    // width: 100%;
-    opacity: 0.6;
-    size: cover;
-    position: relative;
-  }
+  // .header-navigation:after {
+  //   clear: both;
+  //   display: block;
+  //   content: " ";
+  // }
 
-.navbar {
-  margin-bottom: -60px;
-}
+  // .header-navigation li {
+  //   float: left;
+  //   padding: 10px 30px;
+  //   text-align: center;
+  //   list-style-type: none;
+  // }
 
+  // .header-navigation li a {
+  //   color: #333;
+  //   text-decoration: none;
+  // }
 
-
-
-body .header-navigation {
-  width: 100%;
-  background-color: #d2effa;
-  padding: 20px 0;
-  position: absolute;
-}
-
-  .header-navigation:after {
-    clear: both;
-    display: block;
-    content: " ";
-  }
-
-  .header-navigation li {
-    float: left;
-    padding: 10px 30px;
-    text-align: center;
-    list-style-type: none;
-  }
-
-  .header-navigation li a {
-    color: #333;
-    text-decoration: none;
-  }
-
-  .navbar navbar-expand-lg navbar-light bg-light {
-    background-color: #d2effa;  
-  }
+  // .navbar navbar-expand-lg navbar-light bg-light {
+  //   background-color: #d2effa;  
+  // }
 
   .navbar-brand {
     color: #000 !important;
@@ -201,44 +181,6 @@ body .header-navigation {
     background-color: rgba(0, 0, 0, 0.25);
   }
 
-
-/*.navbar-nav ml-auto {*/
-/*  float: right;*/
-/*  display: block;*/
-/*  flex-flow: column;*/
-/*  height: 200px;*/
-/*  font-size: 20px;*/
-/*}*/
-
-/*ul li a {*/
- /* 縦に並べる 
-/*  text-align: right;*/
-/*  list-style-type: none;*/
-/*  padding: 0.5em;*/
-  /*background: #ccc;*/
-/*  margin: 0 0 0 200px;*/
-/*  height: 60px;*/
-/*  font-size: 20px;*/
-/*}*/
-
-/*ul li {*/
-/*　　overflow:hidden;*/
-/*　　list-style-type: none;*/
-/*　　margin: 0 50px;*/
-/*　　z-index: 20;*/
-/*　　float: right;*/
-/*　　margin: 0 0 0 950px;*/
-/*}*/
-
-/*.li a nav-link {*/
-/*  margin: 0 0 0 50px;*/
-/*  float: right;*/
-/*}*/
-/*.li p {*/
-/*  margin: 0 0 0 950px;*/
-/*}*/
-
-
   .posts .post .date {
     font-size: 0.6em;
     color: #999999;
@@ -250,7 +192,7 @@ body .header-navigation {
   }
   
   .posts .post .body {
-    font-size: 0.8em;
+    font-size: 1.0em;
   }
 
   .posts .post .image img {
